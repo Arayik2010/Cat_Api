@@ -1,0 +1,1 @@
+export const CATEGORIES_TYPE = 'CATEGORIES_TYPE'
