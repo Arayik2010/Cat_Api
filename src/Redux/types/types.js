@@ -1,1 +1,2 @@
 export const CATEGORIES_TYPE = 'CATEGORIES_TYPE'
+export const IMAGES_TYPE = 'IMAGES_TYPE'

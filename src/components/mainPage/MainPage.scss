@@ -1,2 +1,23 @@
-
-
+.page {
+  display: flex;
+  background-color: rgb(87, 87, 87);
+  height: 100%;
+}
+.page__sidebar {
+ 
+}
+.page__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.cards {
+}
+.cards__container {
+}
+.cards__image {
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
