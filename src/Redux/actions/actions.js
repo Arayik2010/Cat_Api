@@ -26,15 +26,13 @@ export const categoryAsyncThunk = () => async (dispatch) => {
     .catch((error) => console.log("error", error));
 };
 
-
-
 export const imagesAction = (image) => {
   return {
     type: IMAGES_TYPE,
     payload: image,
   };
 };
-export const imagesAsyncThunk = () => async (dispatch) => {
+export const imagesAsyncThunk = (id) => async (dispatch) => {
   let myHeaders = new Headers();
   myHeaders.append("x-api-key", "DEMO-API-KEY");
 
@@ -43,12 +41,19 @@ export const imagesAsyncThunk = () => async (dispatch) => {
     headers: myHeaders,
   };
 
-  const request = await fetch(
-    "https://api.thecatapi.com/v1/images/search?limit=10&page=1&category_ids=1",
-    requestOptions
-  );
-  await request
-    .json()
-    .then((result) => dispatch(imagesAction(result)))
-    .catch((error) => console.log("error", error));
+  id
+    ? await fetch(
+        `https://api.thecatapi.com/v1/images/search?limit=10&page=1&category_ids=${id}`,
+        requestOptions
+      )
+        .then((result) => result.json())
+        .then((result) => dispatch(imagesAction(result)))
+        .catch((error) => console.log("error", error))
+    : await fetch(
+        "https://api.thecatapi.com/v1/images/search?limit=10&page=1&category_ids=1",
+        requestOptions
+      )
+        .then((result) => result.json())
+        .then((result) => dispatch(imagesAction(result)))
+        .catch((error) => console.log("error", error));
 };

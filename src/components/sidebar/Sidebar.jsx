@@ -22,11 +22,9 @@ const Sidebar = () => {
   //console.log(category);
 
   return (
-    <Router>
-      <div className="sidebar">
-          <ul className="sidebar__category">{category}</ul>
-      </div>
-    </Router>
+    <div className="sidebar">
+      <ul className="sidebar__category">{category}</ul>
+    </div>
   );
 };
 

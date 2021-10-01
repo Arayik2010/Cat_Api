@@ -1,15 +1,16 @@
 .page {
   display: flex;
   background-color: rgb(87, 87, 87);
-  height: 100%;
+  width: 90%;
+  min-height: 100vh;
 }
 .page__sidebar {
- 
+  align-items: center;
 }
 .page__content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  column-gap: 10px;
 }
 .cards {
 }
